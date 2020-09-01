@@ -1,0 +1,32 @@
+<h4>Firebase Login</h4>
+<div class="container jumbotron">
+  <form (ngSubmit)="login()">
+    <div class="form-group">
+      <label >Email address</label>
+      <input type="email" name="login" class="form-control" [(ngModel)]="email" aria-describedby="emailHelp" required>
+      <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label >Password</label>
+      <input name="password" type="password" [(ngModel)]="password" class="form-control" required>
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input">
+      <label class="form-check-label">Check me out</label>
+    </div>
+
+    <div class="form-group p-2">
+      <button style="width: 100%;" type="submit" class="btn btn-primary">Submit</button>
+      <div class="register">
+        <a href="" routerLink="/register">Register</a>
+      </div>
+    </div>
+
+  </form>
+
+  <div class="form-group">
+    <p *ngIf="errorMessage.length > 0" class="text-danger">{{ errorMessage }}</p>
+    <p *ngIf="error.message.length > 0" class="text-danger">{{ error.message }}</p>
+  </div>
+
+</div>
